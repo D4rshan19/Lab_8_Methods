@@ -7,11 +7,16 @@ public class InputHelper {
 
         System.out.println(prompt);
         do {
-            if (scan.hasNextLine() > 0) {
-
+            if (scan.nextInt() > 0) {
+                userInput = scan.nextLine();
+                valid = true;
             }
-        } while ();
-
+            else {
+                System.out.println("Error, string can't be blank. Try again.");
+                scan.nextLine();
+            }
+        } while (!valid);
+        return userInput;
     }
 
 
